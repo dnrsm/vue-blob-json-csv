@@ -1,4 +1,4 @@
-import { Vue } from "vue-property-decorator";
+import Vue from "vue";
 import VueBlobJsonCsvComp from "./VueBlobJsonCsv.vue";
 
 const VueBlobJsonCsv = {

@@ -20,13 +20,22 @@ $ npm i --save vue-blob-json-csv
 
 - Modules
 ```javascript
+import Vue from "vue";
 import VueBlobJsonCsv from 'vue-blob-json-csv';
+
 Vue.use(VueBlobJsonCsv)
 ```
 
 - CDN
 ```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./dist/VueBlobJsonCsv.umd.min.js"></script>
+<script>
+  Vue.use(VueBlobJsonCsv.default);
+  new Vue({
+    el: "#app"
+  })
+</script>
 ```
 
 ## Usage
@@ -69,7 +78,6 @@ Vue.use(VueBlobJsonCsv)
     <p>{{msg}}</p>
     <button @click="sayHello">Hi!</button>
     <vue-blob-json-csv
-      title="Download Todos JSON"
       file-type="json"
       file-name="todos"
       data="[
@@ -93,7 +101,7 @@ Vue.use(VueBlobJsonCsv)
               }
             ]"
     >
-      Button
+      Download JSON
     </vue-blob-json-csv>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
