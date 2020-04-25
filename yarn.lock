@@ -8677,9 +8677,22 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
 
-vue-class-component@^7.1.0:
+vue-blob-json-csv@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vue-blob-json-csv/-/vue-blob-json-csv-0.1.0.tgz#d2fb5a4135e94708028cbdd8f63c47425cbdefe6"
+  integrity sha512-oblzVU3gS1UdOVCP3PytuMvGHc4bYrCZv+USG/vUwzn3xO1ZRUan8CqSyT37IDuHTHGY7+uPqswYud80rYDzEA==
+  dependencies:
+    buefy "^0.8.12"
+    core-js "^2.6.5"
+    ress "^1.2.2"
+    vue "^2.6.10"
+    vue-json-pretty "^1.6.3"
+    vue-property-decorator "^8.1.0"
+
+vue-class-component@^7.0.2, vue-class-component@^7.1.0:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.3.tgz#a5b1abd53513a72ad51098752e2dedd499807cca"
+  integrity sha512-oEqYpXKaFN+TaXU+mRLEx8dX0ah85aAJEe61mpdoUrq0Bhe/6sWhyZX1JjMQLhVsHAkncyhedhmCdDVSasUtDw==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
@@ -8737,10 +8750,22 @@ vue-loader@^15.7.0:
     vue-style-loader "^4.1.0"
 
 vue-property-decorator@^8.1.0:
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-8.4.0.tgz#f4e641f84ca51a7b4721e236392a1efbb6eac00b"
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-8.4.2.tgz#016e17f259f73bc547e77a50ce282ba18db4ee41"
+  integrity sha512-IqbARlvgPE2pzKfbecKxsu2yEH0Wv7hfHR6m4eZA3LTnNw9hveAX77vDfLFyTeMISS5N7Kucp/xRSHjcQ6bAfQ==
   dependencies:
     vue-class-component "^7.1.0"
+
+vue-scroll-toggle-class@^0.1.19:
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/vue-scroll-toggle-class/-/vue-scroll-toggle-class-0.1.19.tgz#2dcc91d08f98b2d87bfe22543169c9b9480bc21c"
+  integrity sha512-jVoIkBKuCxciitT7gjhrgRWzVZozTsOspnkMYR8l+3HKDojOEQchaJCpt9JdO35+qWFn/eriqRMTfsok23RH3A==
+  dependencies:
+    core-js "^2.6.5"
+    ress "^1.2.2"
+    vue "^2.6.10"
+    vue-class-component "^7.0.2"
+    vue-property-decorator "^8.1.0"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"

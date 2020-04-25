@@ -4,7 +4,7 @@
   "main": "dist/VueBlobJsonCsv.common.js",
   "unpkg": "./dist/VueBlobJsonCsv.umd.min.js",
   "jsdelivr": "./dist/VueBlobJsonCsv.umd.min.js",
-  "typings":"dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
   "license": "MIT",
   "author": "Daiki Narushima",
   "repository": "dnrsm/vue-blob-json-csv",
@@ -30,8 +30,9 @@
     "core-js": "^2.6.5",
     "ress": "^1.2.2",
     "vue": "^2.6.10",
+    "vue-blob-json-csv": "^0.1.0",
     "vue-json-pretty": "^1.6.3",
-    "vue-property-decorator": "^8.1.0"
+    "vue-scroll-toggle-class": "^0.1.19"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",

@@ -76,7 +76,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import VueBlobJsonCsv from "./components/VueBlobJsonCsv.vue";
+// import VueBlobJsonCsv from "./components/VueBlobJsonCsv.vue";
 import VueJsonPretty from "vue-json-pretty";
 
 type DataType = {
@@ -103,7 +103,7 @@ type Photos = {
 
 export default Vue.extend({
   components: {
-    VueBlobJsonCsv,
+    // VueBlobJsonCsv,
     VueJsonPretty
   },
   data(): DataType {
