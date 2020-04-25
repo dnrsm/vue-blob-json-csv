@@ -36,11 +36,12 @@ Vue.use(VueBlobJsonCsv)
   <vue-blob-json-csv
     @success="handleSuccess"
     @error="handleError"
+    tag-name="div"
     file-type="json"
     file-name="sample"
     title="Download JSON"
     :data="data"
-    confirm="download it?"
+    confirm="Do you want to download it?"
   >
 </template>
 ```
@@ -54,7 +55,6 @@ Vue.use(VueBlobJsonCsv)
     file-type="json"
     file-name="sample"
     :data="data"
-    confirm="download it?"
   >
     <h2>Title</h2>
     <p>csv download</p>
@@ -111,7 +111,7 @@ Vue.use(VueBlobJsonCsv)
 ## Props
 | Prop | Data Type | Required | Default | Description
 | :--- | :--- | :--- | :--- | :--- |
-| `tagName` | String | `false` |  | Element Tag Name
+| `tagName` | String | `false` | `span` | Element Tag Name
 | `title` | String | `false` |  | Button title name
 | `fileType` | String | `true` | `csv` | File extension (`csv` or `json`)
 | `fileName` | String | `false` | `data` | File name

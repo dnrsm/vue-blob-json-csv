@@ -48,7 +48,7 @@
             file-type="json"
             file-name="photos"
             :data="photos"
-            confirm="Do you really want to download it?"
+            confirm="Do you want to download it?"
             class="button is-primary"
           >
           </vue-blob-json-csv>
