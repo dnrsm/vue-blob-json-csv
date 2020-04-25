@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <vue-blob-json-csv
+      title="Download Todos JSON"
+      file-type="json"
+      file-name="todos"
+      data="[
+              {
+                userId: 1,
+                id: 1,
+                title: 'delectus aut autem',
+                completed: false
+              },
+              {
+                userId: 1,
+                id: 2,
+                title: 'quis ut nam facilis et officia qui',
+                completed: false
+              },
+              {
+                userId: 1,
+                id: 3,
+                title: 'fugiat veniam minus',
+                completed: false
+              }
+            ]"
+    >
+      Button
+    </vue-blob-json-csv>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-blob-json-csv@latest/dist/VueBlobJsonCsv.umd.min.js"></script>
+  <script>
+    Vue.use(VueBlobJsonCsv.default);
+    new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+
+</html>

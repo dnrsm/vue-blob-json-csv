@@ -11,7 +11,7 @@
       />
     </a>
     <div class="container">
-      <h1 class="title">Vue JSON or CSV Export</h1>
+      <h1 class="title">Vue Blob JSON or CSV</h1>
       <div class="columns">
         <p class="column">Download FILE</p>
       </div>
@@ -76,7 +76,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-// import VueBlobJsonCsv from "./components/VueBlobJsonCsv.vue";
+import VueBlobJsonCsv from "./components/VueBlobJsonCsv.vue";
 import VueJsonPretty from "vue-json-pretty";
 
 type DataType = {
@@ -103,7 +103,7 @@ type Photos = {
 
 export default Vue.extend({
   components: {
-    // VueBlobJsonCsv,
+    VueBlobJsonCsv,
     VueJsonPretty
   },
   data(): DataType {

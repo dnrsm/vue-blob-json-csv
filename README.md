@@ -11,35 +11,26 @@ Component library to download a JSON or CSV file using Vue.
 [Link](https://dnrsm.github.io/vue-blob-json-csv/) -->
 
 ## Installation
+- NPM / Yarn
 ```shell
 $ yarn add vue-blob-json-csv
 # or
 $ npm i --save vue-blob-json-csv
 ```
 
-## Global Registration
-Register the component
+- Modules
 ```javascript
 import VueBlobJsonCsv from 'vue-blob-json-csv';
-
-Vue.component('vue-blob-json-csv', VueBlobJsonCsv);
+Vue.use(VueBlobJsonCsv)
 ```
 
-## Local Registration
-### Usage
-```vue
-<script>
-import VueBlobJsonCsv from "vue-blob-json-csv";
-
-export default {
-  components: {
-    VueBlobJsonCsv
-  }
-}
-</script>
+- CDN
+```html
+<script src="./dist/VueBlobJsonCsv.umd.min.js"></script>
 ```
 
 ## Usage
+### Module
 ```vue
 <template>
   <vue-blob-json-csv
@@ -54,7 +45,7 @@ export default {
 </template>
 ```
 
-### Use Slot
+- Use Slot
 ```vue
 <template>
   <vue-blob-json-csv
@@ -69,6 +60,51 @@ export default {
     <p>csv download</p>
   </vue-blob-json-csv>
 </template>
+```
+
+### CDN
+```html
+<body>
+  <div id="app">
+    <p>{{msg}}</p>
+    <button @click="sayHello">Hi!</button>
+    <vue-blob-json-csv
+      title="Download Todos JSON"
+      file-type="json"
+      file-name="todos"
+      data="[
+              {
+                userId: 1,
+                id: 1,
+                title: 'delectus aut autem',
+                completed: false
+              },
+              {
+                userId: 1,
+                id: 2,
+                title: 'quis ut nam facilis et officia qui',
+                completed: false
+              },
+              {
+                userId: 1,
+                id: 3,
+                title: 'fugiat veniam minus',
+                completed: false
+              }
+            ]"
+    >
+      Button
+    </vue-blob-json-csv>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-blob-json-csv@latest/dist/VueBlobJsonCsv.umd.min.js"></script>
+  <script>
+    Vue.use(VueBlobJsonCsv.default);
+    new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
 ```
 
 
