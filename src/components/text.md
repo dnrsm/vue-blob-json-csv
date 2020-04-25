@@ -1,0 +1,12 @@
+```html
+<template>
+  <vue-blob-json-csv
+    @success="handleSuccess"
+    @error="handleError"
+    file-type="json"
+    file-name="sample"
+    :data="photos"
+    confirm="ダウンロードするの？"
+  >
+</template>
+```

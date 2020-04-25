@@ -1,0 +1,58 @@
+{
+  "name": "vue-blob-json-csv",
+  "version": "0.1.0",
+  "main": "dist/VueBlobJsonCsv.common.js",
+  "unpkg": "./dist/VueBlobJsonCsv.umd.min.js",
+  "jsdelivr": "./dist/VueBlobJsonCsv.umd.min.js",
+  "typings":"dist/types/index.d.ts",
+  "license": "MIT",
+  "author": "Daiki Narushima",
+  "repository": "dnrsm/vue-blob-json-csv",
+  "keywords": [
+    "vue",
+    "javascript",
+    "modal",
+    "toggle"
+  ],
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "build:lib": "vue-cli-service build --target lib --name VueBlobJsonCsv ./src/components/VueBlobJsonCsv.vue"
+  },
+  "dependencies": {
+    "buefy": "^0.8.12",
+    "core-js": "^2.6.5",
+    "ress": "^1.2.2",
+    "vue": "^2.6.10",
+    "vue-json-pretty": "^1.6.3",
+    "vue-property-decorator": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/jest": "^23.1.4",
+    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-plugin-typescript": "^3.0.5",
+    "@vue/cli-plugin-unit-jest": "^3.0.5",
+    "@vue/cli-service": "^3.0.5",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "ts-jest": "^23.0.0",
+    "typescript": "^3.4.3",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
