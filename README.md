@@ -20,7 +20,7 @@ $ npm i --save vue-blob-json-csv
 ## Global Registration
 Register the component
 ```javascript
-import { VueBlobJsonCsv } from 'vue-blob-json-csv';
+import VueBlobJsonCsv from 'vue-blob-json-csv';
 
 Vue.component('vue-blob-json-csv', VueBlobJsonCsv);
 ```
@@ -29,7 +29,7 @@ Vue.component('vue-blob-json-csv', VueBlobJsonCsv);
 ### Usage
 ```vue
 <script>
-import { VueBlobJsonCsv } from "vue-blob-json-csv";
+import VueBlobJsonCsv from "vue-blob-json-csv";
 
 export default {
   components: {
