@@ -10,9 +10,9 @@
   "repository": "dnrsm/vue-blob-json-csv",
   "keywords": [
     "vue",
-    "javascript",
-    "modal",
-    "toggle"
+    "blob",
+    "json",
+    "csv"
   ],
   "files": [
     "dist"

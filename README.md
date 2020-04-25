@@ -6,9 +6,7 @@
 # vue-blob-json-csv
 Component library to download a JSON or CSV file using Vue.
 
-<!-- ## Demo
-
-[Link](https://dnrsm.github.io/vue-blob-json-csv/) -->
+## [Demo](https://dnrsm.github.io/vue-blob-json-csv/)
 
 ## Installation
 - NPM / Yarn
