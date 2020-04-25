@@ -1,10 +1,10 @@
 import { Vue } from "vue-property-decorator";
-import VueBlobJsonCsv from "./VueBlobJsonCsv.vue";
+import VueBlobJsonCsvComp from "./VueBlobJsonCsv.vue";
 
-export default {
+const VueBlobJsonCsv = {
   install(vue: typeof Vue, options?: any): void {
-    vue.component("VueBlobJsonCsv", VueBlobJsonCsv);
+    vue.component("VueBlobJsonCsv", VueBlobJsonCsvComp);
   }
 };
 
-export { VueBlobJsonCsv };
+export default VueBlobJsonCsv;
