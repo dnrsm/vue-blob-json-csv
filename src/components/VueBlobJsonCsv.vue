@@ -33,7 +33,7 @@ export default Vue.extend({
     fileName: {
       type: String,
       required: false,
-      default: ""
+      default: "data"
     },
     data: {
       type: Array,
