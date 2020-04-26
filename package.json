@@ -1,6 +1,6 @@
 {
   "name": "vue-blob-json-csv",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/VueBlobJsonCsv.common.js",
   "unpkg": "./dist/VueBlobJsonCsv.umd.min.js",
   "jsdelivr": "./dist/VueBlobJsonCsv.umd.min.js",
@@ -20,7 +20,7 @@
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "build:lib": "vue-cli-service build --target lib --name VueBlobJsonCsv ./src/components/index.ts"
