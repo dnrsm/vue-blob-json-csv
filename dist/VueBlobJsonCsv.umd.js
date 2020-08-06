@@ -2514,12 +2514,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"53f87f51-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueBlobJsonCsv.vue?vue&type=template&id=3636b707&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0f454bac-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueBlobJsonCsv.vue?vue&type=template&id=a0e0e5f8&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tagName,{ref:"download",tag:"component",on:{"click":function($event){return _vm.handleDownload()}}},[(_vm.title === '')?[_vm._t("default")]:_vm._e(),[_vm._v("\n    "+_vm._s(_vm.title)+"\n  ")]],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VueBlobJsonCsv.vue?vue&type=template&id=3636b707&
+// CONCATENATED MODULE: ./src/components/VueBlobJsonCsv.vue?vue&type=template&id=a0e0e5f8&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js
 var iterator = __webpack_require__("5d58");
@@ -2550,6 +2550,9 @@ function typeof_typeof(obj) {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
+var es6_array_iterator = __webpack_require__("cadf");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.keys.js
 var es6_object_keys = __webpack_require__("456d");
 
@@ -2558,6 +2561,7 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--14-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/ts-loader??ref--14-3!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueBlobJsonCsv.vue?vue&type=script&lang=ts&
+
 
 
 
@@ -2605,36 +2609,54 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpac
       default: null
     }
   },
-  methods: {
-    handleDownload: function handleDownload() {
-      var content = null;
+  computed: {
+    createContent: function createContent() {
+      var _this = this;
 
-      if (this.confirm !== null) {
-        var result = confirm(this.confirm);
-        if (!result) return;
-      }
+      var content = null;
 
       if (this.fileType === "json") {
         content = JSON.stringify(this.data);
       } else if (this.fileType === "csv") {
         var keys = this.fields.length > 0 ? this.fields : Object.keys(this.data[0]);
         var csv = "\uFEFF".concat(keys.join(), "\n");
-        this.data.forEach(function (el) {
-          var line = keys.map(function (item) {
-            if (el[item] === null) {
+
+        var _loop = function _loop(index) {
+          var item = _this.data[index];
+          var line = keys.map(function (key) {
+            if (item[key] === null) {
               return null;
-            } else if (typeof_typeof(el[item]) === "object") {
-              return JSON.stringify([el[item]]);
+            } else if (typeof_typeof(item[key]) === "object") {
+              return JSON.stringify([item[key]]);
             } else {
-              return [el[item]];
+              return [item[key]];
             }
           }).join(",");
           csv += "".concat(line, "\n");
-        });
+        };
+
+        for (var index = 0; index < this.data.length; index++) {
+          _loop(index);
+        }
+
         content = csv;
-      } else {
+      }
+
+      return content;
+    }
+  },
+  methods: {
+    handleDownload: function handleDownload() {
+      var content = this.createContent;
+
+      if (content === null) {
         this.$emit("error");
         return;
+      }
+
+      if (this.confirm !== null) {
+        var result = confirm(this.confirm);
+        if (!result) return;
       }
 
       var blob = new Blob([content], {

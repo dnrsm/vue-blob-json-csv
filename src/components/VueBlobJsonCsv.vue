@@ -51,14 +51,9 @@ export default Vue.extend({
       default: null
     }
   },
-  methods: {
-    handleDownload() {
+  computed: {
+    createContent: function(): string | null {
       let content = null;
-
-      if (this.confirm !== null) {
-        const result = confirm(this.confirm);
-        if (!result) return;
-      }
 
       if (this.fileType === "json") {
         content = JSON.stringify(this.data);
@@ -68,24 +63,39 @@ export default Vue.extend({
             ? this.fields
             : Object.keys(this.data[0] as string[]);
         let csv = `\ufeff${keys.join()}\n`;
-        this.data.forEach((el: any) => {
+
+        for (let index = 0; index < this.data.length; index++) {
+          const item: any = this.data[index];
           let line = keys
-            .map((item: any) => {
-              if (el[item] === null) {
+            .map((key: any) => {
+              if (item[key] === null) {
                 return null;
-              } else if (typeof el[item] === "object") {
-                return JSON.stringify([el[item]]);
+              } else if (typeof item[key] === "object") {
+                return JSON.stringify([item[key]]);
               } else {
-                return [el[item]];
+                return [item[key]];
               }
             })
             .join(",");
           csv += `${line}\n`;
-        });
+        }
         content = csv;
-      } else {
+      }
+      return content;
+    }
+  },
+  methods: {
+    handleDownload(): void {
+      let content = this.createContent;
+
+      if (content === null) {
         this.$emit("error");
         return;
+      }
+
+      if (this.confirm !== null) {
+        const result = confirm(this.confirm);
+        if (!result) return;
       }
 
       const blob = new Blob([content], {
