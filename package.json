@@ -1,6 +1,6 @@
 {
   "name": "vue-blob-json-csv",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "dist/VueBlobJsonCsv.common.js",
   "unpkg": "./dist/VueBlobJsonCsv.umd.min.js",
   "jsdelivr": "./dist/VueBlobJsonCsv.umd.min.js",
