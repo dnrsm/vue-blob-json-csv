@@ -73,8 +73,6 @@ Vue.use(VueBlobJsonCsv)
 ```html
 <body>
   <div id="app">
-    <p>{{msg}}</p>
-    <button @click="sayHello">Hi!</button>
     <vue-blob-json-csv
       file-type="json"
       file-name="todos"

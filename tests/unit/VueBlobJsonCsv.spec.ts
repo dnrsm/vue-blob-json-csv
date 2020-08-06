@@ -151,7 +151,7 @@ describe("VueBlobJsonCsv.vue", () => {
         title: "Download CSV",
         fileType: "csv",
         fileName: "todo",
-        confirm: "?????"
+        confirm: "confirm text"
       });
       const link = { href: "", download: "", click: jest.fn() };
       document.createElement = jest.fn().mockReturnValueOnce(link);
